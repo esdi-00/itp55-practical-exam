@@ -41,4 +41,6 @@ INSERT INTO WorkDone (NIN, contractNo, hoursPerWeek) VALUES ('234111XA', 'C1024'
 INSERT INTO WorkDone (NIN, contractNo, hoursPerWeek) VALUES ('712670YD', 'C1025', 28);
 INSERT INTO WorkDone (NIN, contractNo, hoursPerWeek) VALUES ('113567WD', 'C1025', 16);
 
+COMMIT;
+
 
