@@ -1,4 +1,4 @@
---Drop Existing user
+--Drop Existing table
 Drop user InstantCover CASCADE;
 
 Drop table Employee CASCADE;
@@ -31,7 +31,7 @@ Create table Hotel(
 );
 
 Create Table HotelContract(
-  ContractNo Varchar(5),
+  ContractNo Varchar(5) PRIMARY KEY,
   HotelNo Varchar(3),
 )
 
@@ -54,5 +54,7 @@ Insert Into HotelEmployee Values ('113567WD', '16');
 Insert Into HotelEmployee Values ('234111XA', '24');
 Insert Into HotelEmployee Values ('712670YD', '28');
 
+ALTER TABLE HotelEmployee ADD CONSTRAINT NIN FOREIGN KEY (NIN_Em) REFERENCES Employee(NIN);
+ALTER TABLE HotelContract ADD CONSTRAINT HotelNo FOREIGN KEY (HotelNo_Em) REFERENCES Hotel(HotelNo);
 
 commit;
