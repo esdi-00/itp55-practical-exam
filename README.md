@@ -1,1 +1,0 @@
-# itp55-practical-exam
