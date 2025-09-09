@@ -1,0 +1,58 @@
+--Drop Existing user
+Drop user InstantCover CASCADE;
+
+Drop table Employee CASCADE;
+Drop table Hotel CASCADE;
+Drop table HotelEmployee;
+
+--Drop Existing user
+Drop user InstantCover CASCADE;
+
+Drop table Employee CASCADE;
+Drop table Hotel CASCADE;
+Drop table HotelContract CASCADE;
+Drop table HotelEmployee CASCADE;
+
+-- do this first if its the first run in a system
+
+Create User InstantCover Identified by Changeme0;
+Alter User InstantCover Quota Unlimited On DATA;
+Alter User InstantCover Quota Unlimited On USERS;
+Grant Create Session to InstantCover with ADMIN Option;
+
+Create Table Employee(
+  NIN Varchar(10) PRIMARY KEY,
+  EmployeeName Varchar(20),
+);
+
+Create table Hotel(
+  HotelNo Varchar(3) PRIMARY KEY,
+  HotelLocation Varchar(10)
+);
+
+Create Table HotelContract(
+  ContractNo Varchar(5),
+  HotelNo Varchar(3),
+)
+
+Create Table HotelEmployee(
+  NIN Varchar(10), 
+  HoursPerWeek int
+);
+
+Insert Into Employee Values ('113567WD', 'John Smith');
+Insert Into Employee Values ('234111XA', 'Diane Hocine');
+Insert Into Employee Values ('712670YD', 'Sarah White');
+
+Insert Into Hotel Values ('H25', 'Edinburgh');
+Insert Into Hotel Values ('H4', 'Glasgow');
+
+Insert Into HotelContract Values ('C1024', 'H25');
+Insert Into HotelContract Values ('C1025', 'H4');
+
+Insert Into HotelEmployee Values ('113567WD', '16');
+Insert Into HotelEmployee Values ('234111XA', '24');
+Insert Into HotelEmployee Values ('712670YD', '28');
+
+
+commit;
