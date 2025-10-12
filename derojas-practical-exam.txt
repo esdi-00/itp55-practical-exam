@@ -1,0 +1,105 @@
+DROP USER HotelApp CASCADE;
+
+CREATE USER HotelApp QUOTA UNLIMITED ON DATA;
+ALTER USER HotelApp QUOTA UNLIMITED ON USERS;
+
+GRANT CREATE SESSION TO HotelApp WITH ADMIN OPTION;
+ALTER SESSION SET CURRENT_SCHEMA = HotelApp;
+
+DROP TABLE employee cascade constraints;
+DROP TABLE hotel cascade constraints;
+DROP TABLE contracts cascade constraints;
+
+CREATE TABLE employee(
+  NIN varchar (8) PRIMARY KEY,
+  eName varchar (50) NOT NULL);
+  
+CREATE TABLE hotel(
+  hotelNO varchar (3) PRIMARY KEY,
+  hotelLocation varchar (10) NOT NULL);
+  
+  CREATE TABLE contracts(
+    contractNO varchar (5) PRIMARY KEY,
+    NIN varchar (8),
+    hotelNO varchar (3),
+    hoursPerWeek int));
+    
+    ALTER TABLE contracts ADD CONSTRAINT fk_hotelNO_ID FOREIGN KEY(hotelNO) REFERENCES Hotel(hotelN0);
+    ALTER TABLE contracts ADD CONSTRAINT fk_contractNO_ID FOREIGN KEY(contractNO) REFERENCES contracts(contractN0);
+    
+    
+    INSERT INTO employee (NIN, eName) VALUES ('113567WD', 'John Smith');
+    INSERT INTO employee (NIN, eName) VALUES ('234111XA', 'Diane Hocine');
+    INSERT INTO employee (NIN, eName) VALUES ('712670YD', 'Sarah White');
+    
+    INSERT INTO hotel (hotelNo, hotelLocation) VALUES ('H25', 'Edinburgh'),
+    INSERT INTO hotel (hotelNo, hotelLocation) VALUES ('H4', 'Glasgow');
+    
+    INSERT INTO contracts (contractNo, NIN, hotelNO, hoursPerWeek) VALUES ('C1024', '113567WD', 'H25', '16');
+    INSERT INTO contracts (contractNo, NIN, hotelNO, hoursPerWeek) VALUES ('C1024', '234111XA', 'H25', '24');
+    INSERT INTO contracts (contractNo, NIN, hotelNO, hoursPerWeek) VALUES ('C1025', '712670YD', 'H4', '28');
+    INSERT INTO contracts (contractNo, NIN, hotelNO, hoursPerWeek) VALUES ('C1025', '113567WD', 'H4', '16');
+    
+    commit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+    
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
