@@ -1,0 +1,91 @@
+DROP USER HotelAdmin
+CREATE USER HotelAdmin IDENTIFIED BY Changeme0;
+ALTER USER HotelAdmin QUOTA UNLIMITED ON DATA;
+ALTER USER HotelAdmin QUOTA UNLIMITED ON USERS;
+
+GRANT CREATE SESSION TO HotelAdmin WITH ADMIN OPTION;
+GRANT CONNECT TO HotelAdmin;
+ALTER SESSION SET CURRENT_SCHEMA = HotelAdmin;
+
+DROP TABLE Staff CASCADE CONSTRAINTS;
+DROP TABLE Hotel CASCADE CONSTRAINTS;
+DROP TABLE Contract CASCADE CONSTRAINTS;
+DROP TABLE WorkHours CASCADE CONSTRAINTS;
+
+CREATE TABLE Staff (
+NIN varchar(8) PRIMARY KEY,
+eName varchar(100));
+
+CREATE TABLE Hotel (
+hotelNO varchar(4) PRIMARY KEY,
+hotelLocation varchar(100));
+
+CREATE TABLE Contract (
+contractNo varchar(12) PRIMARY KEY,
+hotelNO varchar(5));
+
+CREATE TABLE WorkHours (
+NIN varchar(8),
+contractNo varchar(12),
+hours int);
+
+
+ALTER TABLE Contract ADD CONSTRAINT fk_hotelNO_ID FOREIGN KEY(hotelNO) REFERENCES Hotel(hotelNO);
+ALTER TABLE WorkHours ADD CONSTRAINT fk_contractNo_ID FOREIGN KEY(contractNo) REFERENCES Contract(contractNo);
+ALTER TABLE WorkHours ADD CONSTRAINT fk_NIN_ID FOREIGN KEY(NIN) REFERENCES Staff(NIN);
+
+
+INSERT INTO Staff (NIN, eName) VALUES ('113567WD','John Smith');
+INSERT INTO Staff (NIN, eName) VALUES ('234111XA','Diane Hocine');
+INSERT INTO Staff (NIN, eName) VALUES ('712670YD','Sarah White');
+
+INSERT INTO Hotel (hotelNO, hotelLocation) VALUES ('H25','Edinburgh');
+INSERT INTO Hotel (hotelNO, hotelLocation) VALUES ('H4','Glasgow');
+
+INSERT INTO Contract (contractNo, hotelNO) VALUES ('C1024','H25');
+INSERT INTO Contract (contractNo, hotelNO) VALUES ('C1024','H25');
+INSERT INTO Contract (contractNo, hotelNO) VALUES ('C1025','H4');
+INSERT INTO Contract (contractNo, hotelNO) VALUES ('C1025','H4');
+
+INSERT INTO WorkHours (NIN, contractNo, hours) VALUES ('113567WD','C1024',16);
+INSERT INTO WorkHours (NIN, contractNo, hours) VALUES ('234111XA','C1024',24);
+INSERT INTO WorkHours (NIN, contractNo, hours) VALUES ('712670YD','C1025',28);
+INSERT INTO WorkHours (NIN, contractNo, hours) VALUES ('113567WD','C1025',16);
+
+CREATE VIEW TOTAL_HOURS_SPENT AS SELECT Staff.eName, WorkHours.hours FROM Staff JOIN WorkHours ON Staff.eName = WorkHours.hours;
+
+CREATE OR REPLACE FUNCTION TOTAL_NUMBER_HOURS (p_hours in int) return int
+    IS r_eName varchar2;
+    BEGIN
+        SELECT hours INTO r_hours FROM WorkHours s WHERE s.WorkHours = r_hours;
+        RETURN (r_hours);
+        END TOTAL_NUMBER_HOURS;
+        /
+
+create or replace procedure INSERT_RECORD(
+    NIN in varchar2,
+    employee_name in varchar2,
+    hotel_no in varchar2,
+    hotel_name in varchar2,
+    contract_number in varchar2,
+    hours_per_week in int)
+as 
+begin 
+    insert into Staff values (NIN, employee_nam, hotel_no);
+    insert into Hotel values (hotel_no, hotel_name);
+    insert into Contract values (contract_number, hotel_no);
+    insert into WorkingHours values (NIN, contract_number, hours_per_week);
+    dbms_output.put_line('new record inserted');
+    commit;
+end INSERT_RECORD;
+/
+
+
+
+CREATE INDEX idx_Employee_Name on Staff(eName);
+
+SET serveroutput ON;
+execute dbms_output.put_line(TOTAL_NUMBER_HOURS('John'));
+
+commit;
+
