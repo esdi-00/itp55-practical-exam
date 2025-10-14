@@ -1,0 +1,39 @@
+body {
+background: url(https://rog.edu.ph/img/rc1.jpg);
+background-size: cover;
+}
+ body {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  min-height: 100vh;      
+  margin: 0;  
+}
+.centered-box-margin {
+  width: 400px; 
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #aaa;
+  text-align: center;
+  border-radius: 25px;
+  border: 2px solid #767776;
+  padding: 20px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 5px 10px #08080867;
+}
+h2{
+  font-size: xx-large;
+  color: white;
+  
+}
+p {
+  color: white;
+}
+a{
+  color: white;
+}
+.button {
+  width: 250px;
+  font-size: 10px;
+border-radius: 12px;}
