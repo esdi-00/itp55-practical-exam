@@ -1,0 +1,101 @@
+body {
+  background-image: url('https://rog.edu.ph/img/rc1.jpg');
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-size: cover;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+h2 {
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: white;
+}
+div {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  min-height: 4vw;
+  min-width: 400px;
+}
+form {
+  justify-content: center; 
+  align-items: center;
+  background-color: rgb(87, 101, 112);
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;              
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+form:hover{
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.inputbox {
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding: 5px 0;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  placeholder-shown: transparent; 
+}
+.input-field{
+  position: relative; 
+  margin-bottom: 20px;
+}
+.inputlabel{
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  color: #000000;
+  transition: all 0.2s ease-in-out; 
+  pointer-events: none; 
+}
+.inputbox:hover + .inputlabel,
+.inputbox:not(:placeholder-shown) + .inputlabel{
+    top: 5px;
+  font-size: 0.8em;
+  color: #ffffff;
+  transform: translateY(0);
+}
+.forget{
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+}
+.rememberme{
+  display: flex; 
+  align-items: center; 
+  gap: 5px;
+  color: white;
+}
+button{
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  text-align: center;
+  width: 80%;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  background-color: rgb(4, 17, 6);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #ffffff;
+}
+button:hover{
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px);  
+  color: #000000;
+}
+a {
+  color: white;
+}
