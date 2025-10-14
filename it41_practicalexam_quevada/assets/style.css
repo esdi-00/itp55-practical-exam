@@ -1,0 +1,84 @@
+body {
+    background-image: url('../Images/rc1.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h2 {
+    font-size:50px;
+    color:white;
+    text-align: center;
+}
+.parentContainer {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;          
+}
+.loginContainer{
+    height: 400px;
+    width: 350px;
+    border-radius: 20px;
+
+    border-width: 10px;
+    backdrop-filter: blur(10px);
+}
+.loginContainer form{
+    text-align: center;  
+    align-items: center;
+}
+.input-field label{
+    position: relative;
+    float: left;
+    bottom: 30px;
+    left:40px;
+}
+.input-field input{
+    background-color: transparent;
+    width: 80%;
+    border-left: 0;
+    border-right: 0;
+    border-top: 2px;
+    margin:10px;
+}
+.input-field label:hover{
+    color:white;
+    bottom:60px;
+}
+button {
+    width: 300px;
+    height: 50px;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 20px;
+    color: white;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: black;
+}
+button:hover {
+    background-color: rgba(255,255,255,0.5);
+    color:black;
+    border-style: solid;
+    border-color: white;
+}
+.register a, p{
+    color: white;
+    text-decoration: none;
+}
+.forget input{
+    position: relative;
+    right:200px;
+    top:35px;
+}
+.forget a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+    left:80px;
+    bottom:35px;
+}
+.forget p{
+    position: relative;
+    right:70px;
+}
