@@ -1,0 +1,77 @@
+body{
+    
+    background-image: url("https://pbs.twimg.com/media/Dgocf5BVAAEAksB.jpg:large");
+}
+
+
+.login{
+    background-color:#f70404;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    background-color:rgb(110, 108, 106);
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 2.5rem;
+    border-radius: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid #ccc; 
+    border-radius: 20px;
+}
+
+.forget{
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+
+
+.register{
+    position: relative;
+    margin-bottom: 2.5rem;
+     width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid #ccc;   
+}
+
+.login{
+padding: 14px 28px; 
+    font-size: 16px; 
+}
+
+.large-login-input {
+    padding: 12px 20px; 
+    font-size: 16px;
+}
+
+
+
+
