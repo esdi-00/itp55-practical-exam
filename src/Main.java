@@ -87,6 +87,10 @@ public class Main
         int telHours = sc.nextInt();
         ElectricCharge.add(tel.OpenedTime(telHours));
 
+        // lambda
+        // checking Hours if right data
+        ElectricCharge.forEach((x) -> System.out.println("Checking: "+x));
+
     }
 
     // create output file
