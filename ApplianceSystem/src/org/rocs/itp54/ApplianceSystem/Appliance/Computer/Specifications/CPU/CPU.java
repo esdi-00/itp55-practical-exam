@@ -1,16 +1,20 @@
 package org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.CPU;
 
+//CPU Class for Computer
 public class CPU {
+    //Fields for CPU Class
     private String model;
     private double speed;
     private int cores;
 
+    //Constructor
     public CPU(String model, double speed, int cores) {
         this.model = model;
         this.speed = speed;
         this.cores = cores;
     }
 
+    //Getters and setters
     public String getModel() {
         return model;
     }
@@ -33,5 +37,11 @@ public class CPU {
 
     public void setCores(int cores) {
         this.cores = cores;
+    }
+
+    //toString method for output
+   @Override
+    public String toString() {
+        return model + " (" + cores + " cores, " + speed + "GHz)";
     }
 }

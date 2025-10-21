@@ -1,13 +1,15 @@
 package org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.OperatingSystem;
 
+//OperatingSystem Class
 public class OperatingSystem {
+    //Fields for OperatingSystem Class
     private String operatingSystem;
-    private String edition;
     private String version;
 
-    public OperatingSystem(String operatingSystem, String edition, String version) {
+    //Getters and setters
+
+    public OperatingSystem(String operatingSystem, String version) {
         this.operatingSystem = operatingSystem;
-        this.edition = edition;
         this.version = version;
     }
 
@@ -19,19 +21,17 @@ public class OperatingSystem {
         this.operatingSystem = operatingSystem;
     }
 
-    public String getEdition() {
-        return edition;
-    }
-
-    public void setEdition(String edition) {
-        this.edition = edition;
-    }
-
     public String getVersion() {
         return version;
     }
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    //toString method for output
+    @Override
+    public String toString() {
+        return operatingSystem + " " + version;
     }
 }

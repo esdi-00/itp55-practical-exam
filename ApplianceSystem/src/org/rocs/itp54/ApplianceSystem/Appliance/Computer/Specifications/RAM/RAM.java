@@ -1,27 +1,37 @@
 package org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.RAM;
 
+//RAM Class for Computer
 public class RAM {
-    private int memory;
-    private double speed;
+    //Fields for RAM Class
+    private int size;
+    private String type;
 
-    public RAM(int memory, double speed) {
-        this.memory = memory;
-        this.speed = speed;
+    //Constructor
+    public RAM(int size, String speed) {
+        this.size = size;
+        this.type = speed;
     }
 
-    public int getMemory() {
-        return memory;
+    //Getters and setters
+    public int getSize() {
+        return size;
     }
 
-    public void setMemory(int memory) {
-        this.memory = memory;
+    public void setSize(int size) {
+        this.size = size;
     }
 
-    public double getSpeed() {
-        return speed;
+    public String getType() {
+        return type;
     }
 
-    public void setSpeed(double speed) {
-        this.speed = speed;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    //toString method for output
+    @Override
+    public String toString() {
+        return size + "GB " + type;
     }
 }

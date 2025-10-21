@@ -1,23 +1,29 @@
 package org.rocs.itp54.ApplianceSystem.Appliance.Computer;
 
+import org.rocs.itp54.ApplianceSystem.Appliance.Appliance;
 import org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.CPU.CPU;
 import org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.OperatingSystem.OperatingSystem;
 import org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.RAM.RAM;
 import org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.Storage.Storage;
 
-public class Computer {
+//Computer class which extends Appliance
+public class Computer extends Appliance {
+    //Additional Computer Fields
     private CPU cpu;
     private RAM ram;
     private Storage storage;
     private OperatingSystem operatingSystem;
 
-    public Computer(CPU cpu, RAM ram, Storage storage, OperatingSystem operatingSystem) {
+    //Constructor
+    public Computer(String brandName, double wattage, String warranty, CPU cpu, RAM ram, Storage storage, OperatingSystem operatingSystem) {
+        super(brandName, wattage, warranty);
         this.cpu = cpu;
         this.ram = ram;
         this.storage = storage;
         this.operatingSystem = operatingSystem;
     }
 
+    //Getters and setters
     public CPU getCpu() {
         return cpu;
     }
@@ -48,5 +54,11 @@ public class Computer {
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         this.operatingSystem = operatingSystem;
+    }
+
+    //toString method for output
+    @Override
+    public String toString() {
+        return super.toString() + "\nCPU: " + cpu + "\nRAM: " + ram + "\nStorage: " + storage + "\nOS: " + operatingSystem;
     }
 }

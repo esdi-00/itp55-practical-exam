@@ -1,14 +1,18 @@
 package org.rocs.itp54.ApplianceSystem.Appliance.Computer.Specifications.Storage;
 
+//Storage Class for Computer
 public class Storage {
-    private String type;
+    //Fields for Storage Class
     private int capacity;
+    private String type;
 
-    public Storage(String type, int capacity) {
-        this.type = type;
+    //Constructor
+    public Storage(int capacity, String type) {
         this.capacity = capacity;
+        this.type = type;
     }
 
+    //Getters and setters
     public String getType() {
         return type;
     }
@@ -23,5 +27,11 @@ public class Storage {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    //toString method for output
+    @Override
+    public String toString() {
+        return capacity + "GB " + type;
     }
 }
