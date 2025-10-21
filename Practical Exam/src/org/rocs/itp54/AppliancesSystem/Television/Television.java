@@ -1,23 +1,24 @@
 package org.rocs.itp54.AppliancesSystem.Television;
 
 import org.rocs.itp54.AppliancesSystem.Appliance.Appliance;
+import org.rocs.itp54.AppliancesSystem.Channel.Channel;
+import org.rocs.itp54.AppliancesSystem.Channel.Quality;
 
 public class Television extends Appliance {
-
-    private int channel;
     private int maxChannelNumber;
-
-    public Television(String brandName, int wattage, int warranty, int channel, int maxChannelNumber) {
-        super(brandName, wattage, warranty);
-        this.channel = channel;
-        this.maxChannelNumber = maxChannelNumber;
-    }
-
-    public int getChannel() {
-        return channel;
-    }
+    Channel channel;
 
     public int getMaxChannelNumber() {
         return maxChannelNumber;
+    }
+
+    public Channel getChannel() {
+        return channel;
+    }
+
+    public Television(String brandName, int wattage, int warranty, Quality quality, int maxChannelNumber, Channel channel) {
+        super(brandName, wattage, warranty, quality);
+        this.maxChannelNumber = maxChannelNumber;
+        this.channel = channel;
     }
 }
