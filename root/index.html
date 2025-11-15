@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="asset/styles/style.css">
+    <script src="C:\Users\Angel De Gala\OneDrive\Documents\jsFO\root\asset\scripts\script.js"></script>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h2>Register</h2>
+      <div class="input-group">
+        <input type="text" name="name" placeholder="Full Name" id="full_name"/>
+        <p id="error" class="error"></p>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" placeholder="Email Address" id="email_address"/>
+        <p id="emailError" class="error"></p>
+      </div>
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password" id="password"/>
+        <p id="passwordError" class="error"></p>
+      </div>
+      <div class="input-group">
+        <input type="password" name="password2" id="password2" placeholder="Confirm Password" class="password2">
+        <p id="passwordError2" class="error"></p>
+      </div>
+      <button onclick="validation()" class="btn-submit" id="submit_button">Sign Up</button>
+
+      <div class="success-message" id="successMessage">Registration Successful 🎉</div>
+    </div>
+  </body>
+</html>
