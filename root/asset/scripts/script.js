@@ -66,6 +66,28 @@ passwordInput.addEventListener("blur", function(e) {
 
 });
 
+//ADDITIONAL ERROR LABEL FOR PASSWORD PO HEHE
+
+document.addEventListener('input', () => {
+    const confirmInput = document.getElementById('confirmPassword');
+    if (!confirmInput) return;
+
+    const oldError = document.getElementById('confirm-error');
+    if (oldError) oldError.remove();
+
+    if (confirmInput.value !== passwordInput.value) {
+        const errorLabel = document.createElement('label');
+        errorLabel.id = 'confirm-error';
+        errorLabel.style.color = 'red';
+        errorLabel.textContent = 'Passwords do not match';
+
+        passwordContainer.appendChild(errorLabel);
+    }
+
+    checkFormValidity();
+});
+
+
 const fullNameContainer = nameInput.parentElement;
  nameInput.addEventListener('input', () => {
     const oldError = document.getElementById('name-error');
@@ -97,6 +119,7 @@ emailInput.addEventListener('input', () => {
         emailContainer.appendChild(errorLabel);
     }
 });
+
 
 const submitBtn = document.querySelector('.btn-submit');
 submitBtn.disabled = true; 
