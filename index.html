@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="asset/styles/style.css">
+   
+  </head>
+
+  <body>
+
+    <div class="form-container">
+      <h2>Register</h2>
+
+      <div class="input-group" id="nameCon">
+        <input type="text" onblur=showGender() id="input-name" name="name" placeholder="Full Name"/>
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" id="email-input" placeholder="Email Address"/>
+      </div>
+
+      <div class="input-group" id="pass">
+        <input type="password" id="password-input" onblur=confirmPassword() name="password" placeholder="Password"/>
+      </div>
+
+      <button type="submit" onclick=checkvalue() class="btn-submit">Sign Up</button>
+
+      <div class="success-message" id="Message">Registration Successful 🎉</div>
+
+    </div>
+
+    <script src="asset\scripts\script.js"></script>
+
+  </body>
+</html>
